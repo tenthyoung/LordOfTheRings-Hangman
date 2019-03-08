@@ -1,0 +1,74 @@
+
+
+#smeagol-pic {
+    width: 100px;  
+    transform: scale(-1,1);
+}
+
+/* #game-section {
+} */
+
+#frodo-pic {
+    height: 90px;
+    transform: scale(-1,1);
+}
+
+#hp-button {
+    background: #ee6e73;
+    color: white;
+    margin-top: 1%;
+    padding: 5%;
+}
+
+.row {
+    height: 300px;
+}
+
+#blanks {
+    letter-spacing: 0.1rem;
+}
+/* 
+.frodo-column, .smeagol-column {
+    height: 300px;
+}
+
+#frodoDialogue,#smeagolDialogue {
+    height: 150px;
+    padding: 10%;
+} */
+
+/* @media only screen and (max-width: 850px) {
+    body {
+      background-color: lightblue;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+}*/ 
+@media only screen and (max-width: 920px) {
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    p, button {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+}  
+
+@media only screen and (max-width: 570px) {
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    p, button {
+        font-size: 0.8rem;
+        line-height: 1.2;
+    }
+}  

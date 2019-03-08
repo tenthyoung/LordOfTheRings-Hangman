@@ -1,13 +1,31 @@
+//I need a start menu
+//I need a character select menu
+
 //I need words
+//I need a function that converts phrases into arrays
+
+
 //I need to validate user's input
-//if user's words are capital letters, then i need to add it
-//I need a function that takes the user input, and checks to 
-//see if it matches. 
-while(answer.indexOf("letter") === -1 ) {
-    //keep checking
+if (answer.indexOf(UserGuess) !== -1) { //checks to see if its a letter
+    addLetter();
+    wrongGuess();
+} else {
+    print('invalid input, only lowercase letters please');
 }
-//I need a function that kills a LOTR character if you get it 
-//wrong. 
-//I need a function that adds the letter if its right
-//I need a function that prints a victory when you win
-//I need a function prints a victory when you lose
+//addLetter() function
+function addLetter(userGuess,answer) {
+    for(var i = 0 ; i < level1.length() ; i++) {
+        if (userGuess === level1[i]){
+            level1_Blanks[i] = level1[i];
+        }
+    }   
+}
+
+//wrongGuess()
+
+//function that ends the game if you lose
+
+//I need a function that goes to the next level when you get them all correct
+//prints a victory when you win
+
+//
