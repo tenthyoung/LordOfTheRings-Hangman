@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Lord of the Rings - Hangman</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="main.js"></script>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,7 +20,7 @@
     <div class="row">
       <div class="col-3 frodo-column">
         <p id="frodoDialogue">Alright, you nasty lil' bugger, i'll play your stupid game</p>
-        <img id="frodo-pic" src="./assets/images/Frodo.png" alt="">
+        <img id="frodo-pic" src="./assets/images/Frodo.png" alt="Picture of Frodo">
         <br>
         <h2>Frodo</h2>
         <button >LEVEL: <span id="level">1</span></button>  
@@ -31,24 +30,26 @@
 
       <div class="col-6 bg-dark"  id="game-section">
         <br>
-        <h2 class="text-white">Guess the words!</h2>
+        <h2 class="text-white" id="gameTitle">Guess the words!</h2>
         <br>
         <p class="text-white"><span id="blanks">Press any key to start...</span></p>
         <br><br><br>
-        <p class="text-white">Wrong letters:<span></span></p>
+        <p class="text-white" id="wrongLettersP">Wrong letters: <span id="wrongLetters"></span></p>
       </div>
 
       <div class="col-3 smeagol-column">
         <p id="smeagolDialogue">if you want to pass, you need to guess the words..hehe</p>
-        <img id="smeagol-pic" src="./assets/images/golem.png" alt="golem">
+        <img id="smeagol-pic" src="./assets/images/golem.png" alt="Picture of Smeagol">
         <h2>Smeagol</h2>
       </div>
     </div>
   </div>
-  <audio id="music" controls autoplay loop>
-      <source src="/assets/music/Lord of the Rings - Concerning Hop Beats (Ben Mornin Remix).mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <div>
+    <audio id="music" controls autoplay loop>
+        <source src="/assets/music/Lord of the Rings - Concerning Hop Beats (Ben Mornin Remix).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 
   
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

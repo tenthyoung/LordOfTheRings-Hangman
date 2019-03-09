@@ -10,7 +10,6 @@
 
 #frodo-pic {
     height: 90px;
-    transform: scale(-1,1);
 }
 
 #hp-button {
@@ -22,6 +21,22 @@
 
 .row {
     height: 300px;
+}
+
+.hitFrodo {
+    content:url('/assets/images/hitFrodo.png');
+}
+
+.angryFrodo {
+    content:url('/assets/images/angryFrodo.png');
+}
+
+.deadFrodo {
+    content:url('/assets/images/deadFrodo.png');
+}
+
+#wrongLetters {
+    color: #ee6e73;
 }
 
 #blanks {
@@ -70,5 +85,10 @@
     p, button {
         font-size: 0.8rem;
         line-height: 1.2;
+    }
+    
+    .deadFrodo {
+        height: 5rem;
+        width: 5rem;
     }
 }  
