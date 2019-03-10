@@ -19,6 +19,7 @@ var levelIncrementor = 1;
 var music = document.getElementById('music');
 music.volume = 0.5;
 
+
 //This let's the DOM receive the key inputs from an anonymous function 
 //that gets passed an input, which is the user
 document.onkeyup = function(event) {
@@ -134,6 +135,10 @@ document.onkeyup = function(event) {
                 smeagolDialogue.textContent = "fine..i'll lead you to mount doom";
                 frodoDialogue.textContent = "okie";
                 wrongLettersLine = '';
+                music.pause();
+                var winningMusic = document.getElementById('winningMusic');
+                winningMusic.play();
+                
             } 
         }
     }

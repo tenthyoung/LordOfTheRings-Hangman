@@ -42,30 +42,8 @@
 #blanks {
     letter-spacing: 0.1rem;
 }
-/* 
-.frodo-column, .smeagol-column {
-    height: 300px;
-}
 
-#frodoDialogue,#smeagolDialogue {
-    height: 150px;
-    padding: 10%;
-} */
 
-/* @media only screen and (max-width: 850px) {
-    body {
-      background-color: lightblue;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 1rem;
-        line-height: 1.2;
-    }
-}*/ 
 @media only screen and (max-width: 920px) {
     h2 {
         font-size: 1.4rem;
