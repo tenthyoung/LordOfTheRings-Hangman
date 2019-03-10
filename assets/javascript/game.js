@@ -17,8 +17,8 @@ var levelIncrementor = 1;
 
 
 var music = document.getElementById('music');
-music.volume = 0.5;
-
+music.play();
+//music.volume = 0.5;
 
 //This let's the DOM receive the key inputs from an anonymous function 
 //that gets passed an input, which is the user
@@ -39,12 +39,14 @@ document.onkeyup = function(event) {
     if ( lives < 1) {
         gameTitle.textContent = "Game Over";
         wrongLettersLine.textContent = ""
-        window.setTimeout(function() {frodoPic.classList.add('deadFrodo');});
-        window.setTimeout(function() {smeagolDialogue.textContent = "Precious is ours now!!"});
-        window.setTimeout(function() {frodoDialogue.textContent = "..."});
-        window.setTimeout(function() {
-            gameResult.textContent = "Frodo has been slain...Sauron returned, and Middle Earth has been destroyed..";
-        });  
+        frodoPic.classList.add('deadFrodo');
+        smeagolDialogue.textContent = "Precious is ours now!!";
+        frodoDialogue.textContent = "...";
+        gameResult.textContent = "Frodo has been slain...Sauron returned, and Middle Earth has been destroyed..";
+        music.pause();
+        var losingMusic = document.getElementById('losingMusic');
+        losingMusic.play();
+        //losingMusic.volume = 0.5;
     } else {
         var userGuess = event.key;
         
@@ -134,11 +136,11 @@ document.onkeyup = function(event) {
                 gameResult.textContent = 'Frodo follows Smeagol with Sam and they destroy the ring!'
                 smeagolDialogue.textContent = "fine..i'll lead you to mount doom";
                 frodoDialogue.textContent = "okie";
-                wrongLettersLine = '';
+                wrongLettersLine = "";
                 music.pause();
                 var winningMusic = document.getElementById('winningMusic');
                 winningMusic.play();
-                
+                //winningMusic.volume = 0.5;
             } 
         }
     }
