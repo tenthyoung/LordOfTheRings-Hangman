@@ -1,13 +1,15 @@
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", 
                 "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", 
                 "u", "v", "w", "x", "y", "z" ];
-var lotrPhrases = ['you shall not pass', 'a wizard is never late', 'what about second breakfast', 'smeagol freeeee', 'i cant carry it for you but i can carry you'];
+var lotrPhrases = ['you shall not pass', 'a wizard is never late', 'smeagol freeeee', 'i cant carry it for you but i can carry you'];
 var level1 = stringToArray(lotrPhrases[0]);
 var level1_Blanks = blanksCreator(level1, alphabet);
 var level2 = stringToArray(lotrPhrases[1]);
 var level2_Blanks = blanksCreator(level2, alphabet);
 var level3 = stringToArray(lotrPhrases[2]);
 var level3_Blanks = blanksCreator(level3, alphabet);
+var level4 = stringToArray(lotrPhrases[3]);
+var level4_Blanks = blanksCreator(level4, alphabet);
 
 var wrongLettersArray = [];
 var lives = 10;
@@ -15,7 +17,7 @@ var levelIncrementor = 1;
 
 
 var music = document.getElementById('music');
-music.volume = 0.2;
+music.volume = 0.5;
 
 //This let's the DOM receive the key inputs from an anonymous function 
 //that gets passed an input, which is the user
@@ -45,7 +47,7 @@ document.onkeyup = function(event) {
     } else {
         var userGuess = event.key;
         
-        if (alphabet.indexOf(userGuess) !== -1) {
+        if (alphabet.indexOf(userGuess) !== -1 && levelIncrementor === 1) {
             //Call the addLetter Function to add inputs
             var userGuessMatches = addLetter(userGuess,level1,level1_Blanks);
 
@@ -61,10 +63,79 @@ document.onkeyup = function(event) {
 
             if (currentGameResult === lotrPhrases[0]) {
                 level.textContent = "2";
-                //userGuessMatches = addLetter(userGuess,level1);
+                levelIncrementor = 2;
+                gameTitle.textContent = 'You leveled up! Press a letter to continue!';
             } 
-        }   
+        } else if (alphabet.indexOf(userGuess) !== -1 && levelIncrementor === 2) {
+            gameTitle.textContent = 'Guess Letters!';
 
+            //Call the addLetter Function to add inputs
+            var userGuessMatches = addLetter(userGuess,level2,level2_Blanks);
+
+            //Dialogues
+            dialogueAndConsequences(userGuess, userGuessMatches);
+
+            var currentLevelBlanksMain = level2_Blanks;
+            //Prints result to the screen
+            var currentGameResult = currentLevelBlanksMain.toString().replace(/,/g, '')
+
+            //This prints out the gameresult to the DOM
+            gameResult.textContent = currentGameResult;
+
+            if (currentGameResult === lotrPhrases[1]) {
+                level.textContent = "3";
+                levelIncrementor = 3;
+                gameTitle.textContent = 'You leveled up! Press a letter to continue!';
+            } 
+        } else if (alphabet.indexOf(userGuess) !== -1 && levelIncrementor === 3) {
+            gameTitle.textContent = 'Guess Letters!';
+
+            //Call the addLetter Function to add inputs
+            var userGuessMatches = addLetter(userGuess,level3,level3_Blanks);
+
+            //Dialogues
+            dialogueAndConsequences(userGuess, userGuessMatches);
+
+            var currentLevelBlanksMain = level3_Blanks;
+            //Prints result to the screen
+            var currentGameResult = currentLevelBlanksMain.toString().replace(/,/g, '')
+
+            //This prints out the gameresult to the DOM
+            gameResult.textContent = currentGameResult;
+
+            //YOU WIN!
+            if (currentGameResult === lotrPhrases[2]) {
+                level.textContent = "4";
+                levelIncrementor = 4;
+                gameTitle.textContent = 'You leveled up! Press a letter to continue!';
+            } 
+        } else if (alphabet.indexOf(userGuess) !== -1 && levelIncrementor === 4) {
+            gameTitle.textContent = 'Guess Letters!';
+
+            //Call the addLetter Function to add inputs
+            var userGuessMatches = addLetter(userGuess,level4,level4_Blanks);
+
+            //Dialogues
+            dialogueAndConsequences(userGuess, userGuessMatches);
+
+            var currentLevelBlanksMain = level4_Blanks;
+            //Prints result to the screen
+            var currentGameResult = currentLevelBlanksMain.toString().replace(/,/g, '')
+
+            //This prints out the gameresult to the DOM
+            gameResult.textContent = currentGameResult;
+
+            //YOU WIN!
+            if (currentGameResult === lotrPhrases[3]) {
+                level.textContent = "5";
+                levelIncrementor = 5;
+                gameTitle.textContent = 'You win!';
+                gameResult.textContent = 'Frodo follows Smeagol with Sam and they destroy the ring!'
+                smeagolDialogue.textContent = "fine..i'll lead you to mount doom";
+                frodoDialogue.textContent = "okie";
+                wrongLettersLine = '';
+            } 
+        }
     }
     
     //************************************************//
