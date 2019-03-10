@@ -1,19 +1,21 @@
-// var level1 = ["y","o","u"," ", "s", "h", "a", "l","l", " ", "n", "o", "t", " ", "p", "a","s","s"];
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", 
                 "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", 
                 "u", "v", "w", "x", "y", "z" ];
-var lotrPhrases = ['you shall not pass', '' ];
+var lotrPhrases = ['you shall not pass', 'a wizard is never late', 'what about second breakfast', 'smeagol freeeee', 'i cant carry it for you but i can carry you'];
 var level1 = stringToArray(lotrPhrases[0]);
 var level1_Blanks = blanksCreator(level1, alphabet);
+var level2 = stringToArray(lotrPhrases[1]);
+var level2_Blanks = blanksCreator(level2, alphabet);
+var level3 = stringToArray(lotrPhrases[2]);
+var level3_Blanks = blanksCreator(level3, alphabet);
+
 var wrongLettersArray = [];
 var lives = 10;
+var levelIncrementor = 1;
 
-// var level1_Blanks = ["_","_","_"," ", "_","_","_","_","_", " ","_","_", "_"," ","_","_","_","_" ];
 
-
-// var music = document.getElementById("music");
-// music.volume = 0.1;
-
+var music = document.getElementById('music');
+music.volume = 0.2;
 
 //This let's the DOM receive the key inputs from an anonymous function 
 //that gets passed an input, which is the user
@@ -30,7 +32,6 @@ document.onkeyup = function(event) {
     var gameTitle = document.getElementById('gameTitle');
     var wrongLettersLine = document.querySelector("#wrongLettersP");
 
-    
     //If you lose all hp
     if ( lives < 1) {
         gameTitle.textContent = "Game Over";
@@ -39,31 +40,31 @@ document.onkeyup = function(event) {
         window.setTimeout(function() {smeagolDialogue.textContent = "Precious is ours now!!"});
         window.setTimeout(function() {frodoDialogue.textContent = "..."});
         window.setTimeout(function() {
-            gameResult.textContent = "$Frodo has been slain...Sauron returned, and Middle Earth has been destroyed..";
+            gameResult.textContent = "Frodo has been slain...Sauron returned, and Middle Earth has been destroyed..";
         });  
     } else {
         var userGuess = event.key;
         
-        //alter music settings
-        var music = document.getElementById('music');
-        music.volume = 0.1;
+        if (alphabet.indexOf(userGuess) !== -1) {
+            //Call the addLetter Function to add inputs
+            var userGuessMatches = addLetter(userGuess,level1,level1_Blanks);
 
-        //Call the addLetter Function to add inputs
-        var userGuessMatches = addLetter(userGuess,level1);
+            //Dialogues
+            dialogueAndConsequences(userGuess, userGuessMatches);
 
-        //Dialogues
-        dialogueAndConsequences(userGuess, userGuessMatches);
+            var currentLevelBlanksMain = level1_Blanks;
+            //Prints result to the screen
+            var currentGameResult = currentLevelBlanksMain.toString().replace(/,/g, '')
 
-        //Prints result to the screen
-        var currentGameResult = level1_Blanks.toString().replace(/,/g, '')
+            //This prints out the gameresult to the DOM
+            gameResult.textContent = currentGameResult;
 
-        //This prints out the gameresult to the DOM
-        gameResult.textContent = currentGameResult;
+            if (currentGameResult === lotrPhrases[0]) {
+                level.textContent = "2";
+                //userGuessMatches = addLetter(userGuess,level1);
+            } 
+        }   
 
-
-        if (currentGameResult === lotrPhrases[0]) {
-            level.textContent = "2";
-        }
     }
     
     //************************************************//
@@ -71,13 +72,13 @@ document.onkeyup = function(event) {
     //***********************************************//
     //FUNCTION 1: This array adds the letter to the gameresult if 
     //you guess right. Returns value if the guess is right
-    function addLetter(userGuess,level1) {
+    function addLetter(userGuess,level, level_blanks) {
         var userGuessMatches = false;
         //checks to see if userGuess is in the array
-        for(var i = 0 ; i < level1.length ; i++) {
+        for(var i = 0 ; i < level.length ; i++) {
             frodoDialogue.textContent = userGuess + "?";    
-            if (userGuess === level1[i]){
-                level1_Blanks[i] = level1[i];
+            if (userGuess === level[i]){
+                level_blanks[i] = level[i];
                 userGuessMatches = true;
             } 
         }   
@@ -101,7 +102,6 @@ document.onkeyup = function(event) {
                 },2500);
             } else {
                 smeagolDialogue.textContent = "stupid hobitses";
-
             }
             // if the user's guess is not inside of the array, you lose 5 health
             if (wrongLettersArray.indexOf(userGuess) === -1) {
@@ -126,7 +126,6 @@ document.onkeyup = function(event) {
 
     } 
 };
-
 
 function stringToArray(string) {
     var array = [];
