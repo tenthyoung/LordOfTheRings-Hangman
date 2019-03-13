@@ -6,20 +6,20 @@
 
 
 //I need to validate user's input
-if (answer.indexOf(UserGuess) !== -1) { //checks to see if its a letter
-    addLetter();
-    wrongGuess();
-} else {
-    print('invalid input, only lowercase letters please');
-}
-//addLetter() function
-function addLetter(userGuess,answer) {
-    for(var i = 0 ; i < level1.length() ; i++) {
-        if (userGuess === level1[i]){
-            level1_Blanks[i] = level1[i];
-        }
-    }   
-}
+// if (answer.indexOf(UserGuess) !== -1) { //checks to see if its a letter
+//     addLetter();
+//     wrongGuess();
+// } else {
+//     print('invalid input, only lowercase letters please');
+// }
+// //addLetter() function
+// function addLetter(userGuess,answer) {
+//     for(var i = 0 ; i < level1.length() ; i++) {
+//         if (userGuess === level1[i]){
+//             level1_Blanks[i] = level1[i];
+//         }
+//     }   
+// }
 
 //wrongGuess()
 
