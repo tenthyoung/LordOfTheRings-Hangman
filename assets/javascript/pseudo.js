@@ -34,3 +34,6 @@ function addLetter(userGuess,answer) {
 //change the music for when you lose and win
 //add a replay button
 //add an incrementor, to see how many tries it took the player to do it
+
+
+//
