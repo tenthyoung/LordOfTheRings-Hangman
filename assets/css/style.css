@@ -24,15 +24,15 @@
 }
 
 .hitFrodo {
-    content:url('./assets/images/hitFrodo.png');
+    content:url('/assets/images/hitFrodo.png');
 }
 
 .angryFrodo {
-    content:url('./assets/images/angryFrodo.png');
+    content:url('/assets/images/angryFrodo.png');
 }
 
 .deadFrodo {
-    content:url('./assets/images/deadFrodo.png');
+    content:url('/assets/images/deadFrodo.png');
 }
 
 #wrongLetters {
