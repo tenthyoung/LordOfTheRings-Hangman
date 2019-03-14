@@ -23,6 +23,10 @@
     height: 300px;
 }
 
+.frodoPic {
+    content:url('/assets/images/Frodo.png');
+}
+
 .hitFrodo {
     content:url('/assets/images/hitFrodo.png');
 }

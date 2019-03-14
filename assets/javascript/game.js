@@ -171,8 +171,8 @@ document.onkeyup = function(event) {
             //the first time you get something wrong, Frodo reacts to Smeagol hitting him with a rock
             if ((wrongLettersArray === undefined || wrongLettersArray.length === 0) && lives > 0) {
                 //frodoPic.classList.toggle('hitFrodo');
-                window.setTimeout(function() {frodoPic.classList.toggle('hitFrodo');},500);
-                window.setTimeout(function() {frodoPic.classList.toggle('hitFrodo');},2000);
+                window.setTimeout(function() {frodoPic.classList.toggle('hitFrodo');}, 500);
+                window.setTimeout(function() {frodoPic.classList.toggle('frodoPic');}, 2000);
                 window.setTimeout(function() {
                     frodoDialogue.textContent = "ow, did you just throw a rock at me?";},2000);
                 window.setTimeout(function() {
@@ -186,8 +186,8 @@ document.onkeyup = function(event) {
                 wrongLettersArray.push(userGuess);
                 hp.textContent -= 10;
                 lives--;
-                window.setTimeout(function() {frodoPic.classList.toggle('hitFrodo');},500);
-                window.setTimeout(function() {frodoPic.classList.toggle('hitFrodo');}, 1000);
+                window.setTimeout(function() {frodoPic.classList.toggle('hitFrodo');},2000);
+                window.setTimeout(function() {frodoPic.classList.toggle('frodoPic');}, 1000);
                 if (lives < 6) {
                     window.setTimeout(function() {frodoPic.classList.toggle('angryFrodo');},500);
                 }
