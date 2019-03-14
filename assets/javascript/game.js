@@ -16,8 +16,8 @@ var lives = 10;
 var levelIncrementor = 1;
 
 
-var music = document.getElementById('music');
-music.play();
+// var music = document.getElementById('music');
+// music.play();
 //music.volume = 0.5;
 
 //This let's the DOM receive the key inputs from an anonymous function 
