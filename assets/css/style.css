@@ -23,18 +23,18 @@
 .row {
     height: 300px;
 }
-
+/* 
 .frodoPic {
     content:url('/assets/images/Frodo.png');
-}
+} */
 
 .hitFrodo {
     content:url('/assets/images/hitFrodo.png');
 }
 
-.angryFrodo {
+/* .angryFrodo {
     content:url('/assets/images/angryFrodo.png');
-}
+} */
 
 .deadFrodo {
     content:url('/assets/images/deadFrodo.png');
