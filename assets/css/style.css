@@ -23,21 +23,13 @@
 .row {
     height: 300px;
 }
-/* 
-.frodoPic {
-    content:url('/assets/images/Frodo.png');
-} */
 
 .hitFrodo {
-    content:url('/assets/images/hitFrodo.png');
+    content:url('../images/hitFrodo.png');
 }
 
-/* .angryFrodo {
-    content:url('/assets/images/angryFrodo.png');
-} */
-
 .deadFrodo {
-    content:url('/assets/images/deadFrodo.png');
+    content:url('../images/deadFrodo.png');
 }
 
 #wrongLetters {
