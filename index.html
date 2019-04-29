@@ -19,34 +19,48 @@
     <span class="navbar-brand mb-0 h1"><i class="fas fa-ring"></i> Lord of the Rings Hangman</span>
   </nav>
 
-  <div id="mainContainer" class="container">
-    <div class="row">
+  <div id="mainContainer" class="container"> 
+    <div id="main-row" class="row">
       <div class="col-3 frodo-column">
-        <p id="frodoDialogue">Alright, you nasty lil' bugger, i'll play your stupid game</p>
-        <img id="frodo-pic" src="./assets/images/Frodo.png" alt="Picture of Frodo">
-        <br>
-        <h2>Frodo</h2>
-        <button>LEVEL: <span id="level">1</span></button>
-        <br>
-        <button id="hp-button">HP: <span id="hp">100</span></button>
+        <div class="row speechBubble">
+          <p id="frodoDialogue">Alright, you nasty lil' bugger, i'll play your stupid game</p>
+        </div>
+        <div class="row frodo-row">
+          <img id="frodo-pic" src="./assets/images/Frodo.png" alt="Picture of Frodo">
+        </div>
+        <div class="row name-row">
+        </div>
+          <button>LEVEL: <span id="level">1</span></button>
+          <button id="hp-button">HP: <span id="hp">100</span></button>
       </div>
 
       <div class="col-6" id="game-section">
         <br>
         <h2 class="text-black" id="gameTitle">Guess Letters!</h2>
         <br>
-        <p class="text-black "><span id="blanks">Press any key to start...</span></p>
+        <p class="text-black "><span id="blanks">Press the green button to start....</span></p>
         <br>
         <br>
         <br>
-        <p class="text-black " id="wrongLettersP">Wrong letters: <span id="wrongLetters"></span></p>
+        <p class="text-black d-none" id="wrongLettersP">Wrong letters: <span id="wrongLetters"></span></p>
+        <br>
+        <br>
+        <button id="playButton" type="button" class="btn btn-success">Play <i class="fas fa-arrow-circle-right"></i></button>
+        <button id="continueButton" type="button" class="btn btn-success d-none">Continue <i class="fas fa-arrow-circle-right"></i></button>
       </div>
 
       <div class="col-3 smeagol-column">
-        <p id="smeagolDialogue">if you want to pass, you need to guess the words..hehe</p>
-        <img id="smeagol-pic" src="./assets/images/golem.png" alt="Picture of Smeagol">
-        <h2>Smeagol</h2>
+        <div class="row speachBubble">
+          <p id="smeagolDialogue">if you want to pass, you need to guess the words..hehe</p>
+        </div>
+        <div class="row smeagol-row">
+          <img id="smeagol-pic" src="./assets/images/golem.png" alt="Picture of Smeagol">
+        </div>
+        <div class="row blank-row">
+        </div>
       </div>
+
+
     </div>
   </div>
   <div>
